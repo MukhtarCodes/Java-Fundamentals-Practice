@@ -6,7 +6,22 @@ import java.util.ArrayList;
 public class LibraryBookRecorder {
 
     // Stores the names of all recorded books
-    static ArrayList<String> totalBooksStored = new ArrayList<>();
+	static ArrayList<String> totalBooksStored = new ArrayList<>();
+
+    // Adds a recorded book to the ArrayList
+    // and displays all books recorded so far
+    static void displayBooksRecorded(String bookName) {
+
+	    // Store the book name in the ArrayList
+	    totalBooksStored.add(bookName);
+	
+	    // Display all recorded book names
+	    System.out.println("Recorded Book Names: ");
+	
+	    for (int i = 0; i < totalBooksStored.size(); i++) {
+	        System.out.println((i + 1) + ". " + totalBooksStored.get(i));
+	    }
+    }
 
     // Scanner for user input
     static Scanner input = new Scanner(System.in);
@@ -40,6 +55,8 @@ public class LibraryBookRecorder {
                 System.out.println("Author Name: " + authorName);
                 System.out.println("Year Published: " + yearPublished);
                 System.out.println("Category: " + category.get(0));
+                // Save and display all recorded books
+                displayBooksRecorded(bookName);
                 break;
 
             case 2:
@@ -47,6 +64,8 @@ public class LibraryBookRecorder {
                 System.out.println("Author Name: " + authorName);
                 System.out.println("Year Published: " + yearPublished);
                 System.out.println("Category: " + category.get(1));
+                // Save and display all recorded books
+                displayBooksRecorded(bookName);
                 break;
 
             case 3:
@@ -54,6 +73,8 @@ public class LibraryBookRecorder {
                 System.out.println("Author Name: " + authorName);
                 System.out.println("Year Published: " + yearPublished);
                 System.out.println("Category: " + category.get(2));
+                // Save and display all recorded books
+                displayBooksRecorded(bookName);
                 break;
 
             default:
@@ -72,23 +93,16 @@ public class LibraryBookRecorder {
                     System.out.println("Author Name: " + authorName);
                     System.out.println("Year Published: " + yearPublished);
                     System.out.println("Category: " + userCategory);
-
-                } else {
+                    // Save and display all recorded books
+                    displayBooksRecorded(bookName);
+                    }
+                
+                else {
 
                     // Handles invalid menu choices
-                    System.out.println("Invalid Choice");
+                    System.out.println("Wrong Input!");
 
                 }
-        }
-
-        // Store the book name in the ArrayList
-        totalBooksStored.add(bookName);
-
-        // Display all recorded book names
-        System.out.println("Recorded Book Names: ");
-
-        for (int i = 0; i < totalBooksStored.size(); i++) {
-            System.out.println((i + 1) + ". " + totalBooksStored.get(i));
         }
     }
 
